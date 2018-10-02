@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 
 
 class Comment extends Component{
@@ -22,13 +23,18 @@ class Comment extends Component{
 
 class CommentList extends Component{
 
+    static defaultProps={
+        comments:[]
+    }
+
+    static propTypes={
+        comments: PropTypes.array,
+    }
+
     constructor(props){
         super(props)
     }
 
-    static defaultProps={
-        comments:[]
-    }
 
     render(){
         console.info('props',this.props)
